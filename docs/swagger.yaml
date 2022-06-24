@@ -1,0 +1,112 @@
+basePath: /
+definitions:
+  ErrorResponse:
+    properties:
+      appCode:
+        description: application-specific error code
+        type: integer
+      errorText:
+        description: application-level error message, for debugging
+        type: string
+      statusText:
+        description: user-level status message
+        type: string
+    type: object
+  User:
+    properties:
+      address:
+        description: The address associated with this user
+        example: johns-street 27
+        type: string
+      birthday:
+        description: The date of birth of this user
+        example: 10-2-1997
+        type: string
+      createdat:
+        description: the creation date and time of this user on the system
+        example: 20-4-2930
+        type: string
+      email:
+        description: The email address associated with this user
+        example: johndoe@gamil.com
+        type: string
+      id:
+        description: The Unique id of this user
+        example: 1
+        type: integer
+      phonenumber:
+        description: The phone number associated with this user
+        example: "0717256998"
+        type: string
+    type: object
+  UserList:
+    properties:
+      items:
+        description: A list of users
+        items:
+          $ref: '#/definitions/User'
+        type: array
+      next_page_id:
+        description: The id to query the next page
+        example: 10
+        type: integer
+      pageSize:
+        description: The page size of the query
+        type: integer
+    type: object
+host: example.com
+info:
+  contact:
+    name: mike_okoth_ogodo
+  description: This API is a fullfillment of Evolves hiring task of building an API
+  title: USER API
+paths:
+  /users:
+    get:
+      description: Get all users stored in the database
+      parameters:
+      - description: id of the page to be retrieved
+        in: query
+        name: page_id
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/UserList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+      summary: List all users
+      tags:
+      - Users
+    put:
+      description: |-
+        PutUser writes a user to the database
+        To write a new User, leave the id empty. To update an existing one, use the id/email/phonenumber of the user to be updated
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/User'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+      summary: Add a user to the database
+      tags:
+      - Users
+swagger: "2.0"

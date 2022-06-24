@@ -11,9 +11,9 @@ replace github.com/myk4040okothogodo/EvolveAPI/pkg/types => ../types
 require (
 	github.com/go-chi/chi v1.5.4
 	github.com/go-chi/render v1.0.1
-	github.com/myk4040okothogodo/EvolveAPI/pkg/db latest
-	github.com/myk4040okothogodo/EvolveAPI/pkg/middleware latest
-	github.com/myk4040okothogodo/EvolveAPI/pkg/types latest
+	github.com/myk4040okothogodo/EvolveAPI/pkg/db v0.0.0-20220624195938-26d8e7e0cfb1
+	github.com/myk4040okothogodo/EvolveAPI/pkg/middleware v0.0.0-20220624195938-26d8e7e0cfb1
+	github.com/myk4040okothogodo/EvolveAPI/pkg/types v0.0.0-20220624195938-26d8e7e0cfb1
 	github.com/swaggo/http-swagger v1.3.0
 	go.uber.org/zap v1.21.0
 )

@@ -9,8 +9,8 @@ replace github.com/myk4040okothogodo/EvolveAPI/pkg/db => ../db
 require (
 	github.com/go-chi/chi v1.5.4
 	github.com/go-chi/render v1.0.1
-	github.com/myk4040okothogodo/EvolveAPI/pkg/db v0.0.0-00010101000000-000000000000
-	github.com/myk4040okothogodo/EvolveAPI/pkg/types v0.0.0-00010101000000-000000000000
+	github.com/myk4040okothogodo/EvolveAPI/pkg/db v0.0.0-20220624195938-26d8e7e0cfb1
+	github.com/myk4040okothogodo/EvolveAPI/pkg/types v0.0.0-20220624195938-26d8e7e0cfb1
 	go.uber.org/zap v1.21.0
 )
 

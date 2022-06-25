@@ -1,1 +1,1 @@
-web: EvolveAPI
+worker: EvolveAPI

@@ -1,1 +1,1 @@
-web: EvolveAPI
+web: bin/EvolveAPI

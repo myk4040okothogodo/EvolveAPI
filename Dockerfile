@@ -1,4 +1,4 @@
-FROM golang:1.18 as gobuild
+FROM golang:1.16 as gobuild
 ARG VERSION=latest
 
 WORKDIR /go/src/github.com/myk4040okothogodo/EvolveAPI

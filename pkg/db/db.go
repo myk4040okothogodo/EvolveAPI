@@ -19,7 +19,7 @@ const (
 //ClientInterface resembles a db interface to interact with an underlying db
 type ClientInterface interface {
     Ping() error
-    Connect(connectionString string) error
+    Connect(connStr string) error
     GetUserByID(id int) *types.User
     //GetUserByEmail(email string) *types.User
     //GetUserByPhonenumber (phonenumber string) *types.User
@@ -40,12 +40,12 @@ func (c *Client) Ping() error {
 
 
 // Connect establishes a connection to the database and auto migrates the database schema
-func (c *Client) Connect(connectionString string) error {
+func (c *Client) Connect(connStr string) error {
 	var err error
 	// Create the database connection
 	c.Client, err = gorm.Open(
 		"postgres",
-		connectionString,
+		connStr,
 	)
 
 	// End the program with an error if it could not connect to the database

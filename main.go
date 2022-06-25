@@ -15,8 +15,8 @@ import (
 
   )
 
-const defaultConnection ="host=localhost port=5432 user=postgres dbname=evolveapi password=mykokothe sslmode=disable"
-
+//const defaultConnection ="host=localhost port=5432 user=postgres dbname=evolveapi password=mykokothe sslmode=disable"
+const defaultConnection="postgres://jnbskkumbakrvx:f003b356bfb7fc7bb7ef053dad20c1deb5eebc42eb59fa81e29005321d9a356b@ec2-18-204-142-254.compute-1.amazonaws.com:5432/ddfnri69c2utj9"
 
 
 var ( 
